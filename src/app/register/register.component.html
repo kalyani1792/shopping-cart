@@ -1,0 +1,57 @@
+
+<div class="row">
+    <div class="card"> 
+        <div class="card-header">
+            <div class="col-md-6 offset-md-5">
+            <h3>Register here</h3>
+        </div>  
+        </div>
+   <div *ngIf="alert" class="alert alert-success alert-dismissible fade show">
+    <strong>success!!!</strong>you has been register successfully
+    <button (click)="closeAlert()" type="button" class="close"  data-dismissible>
+        <span aria-hidde="true">&times;</span>
+    </button>
+
+   </div>
+  <div class="col-md-4 offset-md-4 card-body">
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
+        <div class="row">
+            <div class="col-md-6 ">
+                <label>First Name</label>
+                <input type="text" formControlName="firstName" class="form-control" [ngClass]="{'is-invalid':registerForm.get('firstName').invalid && registerForm.get('firstName').touched}">
+               
+                    <span class="invalid-feedback">
+                        <span *ngIf="registerForm.get('firstName').hasError('required')">First Name cannot be blank</span>
+                    </span>
+      </div>
+  
+    <div class="col-md-6">
+        <label> Last Name:</label>
+        <input type="text" formControlName="lastName" class="form-control" [ngClass]="{'is-invalid' :registerForm.get('lastName').invalid && registerForm.get('lastName').touched}"/>
+        <span class="invalid-feedback">
+        <span *ngIf="registerForm.get('lastName').hasError('required')">last Name cannot be blank</span></span>
+</div>
+</div>
+    
+ 
+ <label>email:</label>
+       <input type="email" class="form-control" formControlName="email"  [ngClass]="{'is-invalid': registerForm.get('email').invalid && registerForm.get('email').touched}"/>
+       <span class="invalid-feedback">
+        <span *ngIf="registerForm.get('email').hasError('required')">email can't be blank</span></span>
+       <br>
+   
+    <label>password:</label>
+       <input type="password" class="form-control" formControlName="password" [ngClass]="{'is-invalid': registerForm.get('password').invalid && registerForm.get('password').touched}"/>
+       <span class="invalid-feedback">
+        <span *ngIf="registerForm.get('password').hasError('required')">password cannot be blank</span>
+       </span>
+       <br>
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+     <button class="btn btn-primary">Register</button>
+  </div>
+</div>
+</form>
+</div>
+</div>
+ <!-- <a [routerLink]="['/register']">register here</a> -->

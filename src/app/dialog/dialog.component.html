@@ -1,0 +1,48 @@
+<h1 mat-dialog-title>Add product Form</h1>
+<form [formGroup]="productForm">
+<div mat-dialog-content>
+    <mat-form-field appearance="outline">
+        <mat-label>Product name</mat-label>
+        <input formControlName="productName" matInput placeholder="productName">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Product Category</mat-label>
+<mat-select placeholder="category" formControlName="productCategry">
+    <mat-option value="Fruit">Fruit</mat-option>
+    <mat-option value="Elecrtonics">Elecrtonics</mat-option>
+    <mat-option value="Bio">Bio</mat-option>
+    <mat-option value="food">food</mat-option>
+</mat-select>        
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Choose a date</mat-label>
+        <input formControlName="date" matInput [matDatepicker]="picker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field><br>
+      <label for=""><h5>Products Freshness</h5></label>
+      <mat-radio-group class="example-radio-group" formControlName="freshness" [(ngModel)]="favoriteProduct">
+     
+      <mat-radio-button class="example-radio-button" *ngFor="let fresh of Freshness"[value]="fresh">
+        {{fresh}}
+      </mat-radio-button>
+      </mat-radio-group>
+     <!-- <div>Your fav product is {{favoriteProduct}}</div>  -->
+      <br>
+      <mat-form-field appearance="outline">
+        <mat-label>Price</mat-label>
+        <input matInput type="number" formControlName="price">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Comments</mat-label>
+        <textarea matInput placeholder="comments here"  formControlName="comments"></textarea>
+      </mat-form-field>
+  
+</div>
+</form>
+<hr>
+<div mat-dialog-action [align]=" 'end' ">
+        <button mat-raised-button color="warn" mat-dialog-close>close</button>&nbsp;
+        <button mat-raised-button color="primary" (click)="addProducts()">{{actionBtn}}</button>
+</div>

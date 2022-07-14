@@ -11,4 +11,8 @@ export class UserService {
   {
     return this.http.post(usersUrl,data)
   }
+  loginUser()
+  {
+    return this.http.get<any>(usersUrl)
+  }
 }

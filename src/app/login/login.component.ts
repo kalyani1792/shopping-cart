@@ -1,5 +1,9 @@
+import { Token } from '@angular/compiler/src/ml_parser/lexer';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup,Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
+import { UserService } from '../services/user.service';
 // function symbolValidator(control){    //control=loginForm=password
 // console.log(control.value);
 
@@ -12,7 +16,7 @@ import { FormBuilder,FormGroup,Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
 loginForm:FormGroup;
 submitted=false;
-constructor(private formBuilder:FormBuilder) { }
+constructor(private formBuilder:FormBuilder,private userService:UserService,private router:Router,private auth:AuthService) { }
 
   ngOnInit() {
   this.buildForm();
@@ -26,13 +30,43 @@ constructor(private formBuilder:FormBuilder) { }
     })
   }
   onSubmit(){
-    this.submitted=true;
-    if(this.loginForm.invalid){
-      return
-    }
-    alert('success!!!-)\n\n' +JSON.stringify(this.loginForm.value,null,4));
-    console.log(this.loginForm.value);
+    this.login();
+  }
+  login()
+ {
+//     if(this.auth.isLoggedIn()){
+// this.router.navigate(['addproject'])
+//     }
+//  if (this.loginForm.valid){
+//   return this.auth.loggedIn(this.loginForm.value).subscribe((res)=>{
+//     this.router.navigate(['addproduct'])
+//   },
+//   (err:Error)=>{
+//     alert(err.message)
+//   }
+//   ) }
+//     if(this.loginForm.invalid){
+//       return
+//     }
+    return this.userService.loginUser().subscribe(res=>{
+  
+      const userData=res.find((a:any)=>{
+        return a.email===this.loginForm.value.email && a.password===this.loginForm.value.password
+      });
+      if(userData){
+        alert("login success");
+        this.loginForm.reset();
+        this.router.navigate(['shop'])
+        localStorage.setItem('token',JSON.stringify(userData));
+      }
+      else{
+        alert("user not found")
+      }
+    })
     
+  // alert('success!!!-)\n\n' +JSON.stringify(this.loginForm.value,null,4));
+    
+    console.log(this.loginForm.value);
   }
 
 }

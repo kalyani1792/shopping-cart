@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup ,FormBuilder,Validators} from '@angular/forms';
 import { LoginComponent } from '../login/login.component';
 import { UserService } from '../services/user.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -10,7 +11,7 @@ import { UserService } from '../services/user.service';
 export class RegisterComponent implements OnInit {
   registerForm:FormGroup;
   alert:boolean;
-  constructor(private formBuilder:FormBuilder, private user:UserService) { }
+  constructor(private formBuilder:FormBuilder, private user:UserService,private router:Router) { }
 
   ngOnInit() {
     this.buildForm();
@@ -30,6 +31,7 @@ export class RegisterComponent implements OnInit {
     this.user.registerUser(this.registerForm.value).subscribe((result)=>{
       console.warn(result);
       this.alert=true
+      this.router.navigate(['login'])
     })
   }
   closeAlert(){

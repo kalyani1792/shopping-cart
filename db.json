@@ -328,14 +328,60 @@
       "email": "akshay@gmail.com",
       "password": "13456ddd",
       "id": 8
-    }
-  ],
-  "editdata" :[
+    },
     {
-      
+      "firstName": "",
+      "lastName": "",
+      "email": "",
+      "password": "",
+      "id": 9
+    },
+    {
+      "firstName": "kalyani",
+      "lastName": "shinde",
+      "email": "kalyanishinde601@gmail.com",
+      "password": "1234",
+      "id": 10
+    },
+    {
+      "firstName": "kalyani",
+      "lastName": "shinde",
+      "email": "kalyanishinde601@gmail.com",
+      "password": "1234@11",
+      "id": 11
+    },
+    {
+      "firstName": "kalyani",
+      "lastName": "shinde",
+      "email": "k@gmail.com",
+      "password": "123445",
+      "id": 12
+    },
+    {
+      "firstName": "sharvil",
+      "lastName": "shinde",
+      "email": "sharvil@gmail.com",
+      "password": "11122020",
+      "id": 13
+    },
+    {
+      "firstName": "kalyani",
+      "lastName": "shinde",
+      "email": "kal@gmail.com",
+      "password": "171192",
+      "id": 14
+    },
+    {
+      "firstName": "sharvil",
+      "lastName": "shinde",
+      "email": "sharvil@gmail.com",
+      "password": "11122020",
+      "id": 15
     }
   ],
-
+  "editdata": [
+    {}
+  ],
   "posts": [
     {
       "id": 1,
@@ -343,6 +389,7 @@
       "author": "typicode"
     }
   ],
+  "signupUsers": [],
   "comments": [
     {
       "id": 1,

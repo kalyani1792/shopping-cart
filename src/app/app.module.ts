@@ -35,6 +35,9 @@ import { AdminDataComponent } from './admin-data/admin-data.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { UsdinrPipe } from './pipe/usdinr.pipe';
+import { ContactsComponent } from './contacts/contacts.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,6 +56,9 @@ import {MatSortModule} from '@angular/material/sort';
     AddProductComponent,
     DialogComponent,
     AdminDataComponent,
+    DashboardComponent,
+    UsdinrPipe,
+    ContactsComponent,
 
 
   ],

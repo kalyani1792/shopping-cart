@@ -31,13 +31,14 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material';
 import {MatRadioModule} from '@angular/material/radio';
-import { AdminDataComponent } from './admin-data/admin-data.component';
+import {AdminDataComponent } from './admin-data/admin-data.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
-import { DashboardComponent } from './admin/dashboard/dashboard.component';
-import { UsdinrPipe } from './pipe/usdinr.pipe';
-import { ContactsComponent } from './contacts/contacts.component';
+import {UsdinrPipe } from './pipe/usdinr.pipe';
+import {AbouComponent } from './abou/abou.component';
+import {MatCardModule} from '@angular/material/card';
+import {FlexLayoutModule } from '@angular/flex-layout';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,9 +57,8 @@ import { ContactsComponent } from './contacts/contacts.component';
     AddProductComponent,
     DialogComponent,
     AdminDataComponent,
-    DashboardComponent,
     UsdinrPipe,
-    ContactsComponent,
+    AbouComponent,
 
 
   ],
@@ -82,7 +82,9 @@ import { ContactsComponent } from './contacts/contacts.component';
   MatRadioModule,
   MatTableModule,
   MatPaginatorModule,
-  MatSortModule
+  MatSortModule,
+  MatCardModule,
+  FlexLayoutModule
   ],
   entryComponents: [DialogComponent],
   providers: [],

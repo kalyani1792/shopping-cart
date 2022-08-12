@@ -1,3 +1,18 @@
  
 <p>i am child component</p>
-<button class="btn btn-primary" (click)="sendData()">send</button>
+ 
+<p [ngClass]="['one','two']">Ng class with string</p>
+<p [ngClass]="'three four'">Address-sangamner Khurd</p>
+<p [ngClass]="{'one':true,'two':false,'three':true}">mobile number-847658964 ng class as object</p>
+<p [ngClass]="getCss('mode')">place:pune</p>
+
+<h3>Department list</h3>
+<ul class="items">
+    <li (click)="onSelect(department)" *ngFor="let department of Departments">
+     <span class="badge">{{department.id}}</span>{{department.name}}
+    </li>
+</ul>
+
+
+
+

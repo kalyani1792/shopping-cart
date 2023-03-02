@@ -1,1 +1,10 @@
-<p>list works!</p>
+<ul>
+    <li *ngFor= "let admin of adminDa">
+        {{admin.productName | uppercase }}---------------
+        {{admin.price | currency:'INR'}}
+        </li>
+    </ul>
+//pure and impure pipe exapmle
+    <input type="text" value="" #textname> &nbsp;
+    <button class="btn btn-primary" (click)="addValue(textname.value)">add</button>
+    <h4>{{country | arraypipe }}</h4>

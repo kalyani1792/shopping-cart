@@ -28,6 +28,7 @@ constructor(private formBuilder:FormBuilder,private userService:UserService,priv
       email:['',[Validators.required,Validators.email]],
       password:['',[Validators.required,Validators.minLength(6)]]
     })
+    
   }
   onSubmit(){
     this.login();
@@ -48,8 +49,8 @@ constructor(private formBuilder:FormBuilder,private userService:UserService,priv
 //     if(this.loginForm.invalid){
 //       return
 //     }
+if(this.loginForm.valid){
     return this.userService.loginUser().subscribe(res=>{
-  
       const userData=res.find((a:any)=>{
         return a.email===this.loginForm.value.email && a.password===this.loginForm.value.password
       });
@@ -63,7 +64,7 @@ constructor(private formBuilder:FormBuilder,private userService:UserService,priv
         alert("user not found")
       }
     })
-    
+  }
   // alert('success!!!-)\n\n' +JSON.stringify(this.loginForm.value,null,4));
     
     console.log(this.loginForm.value);

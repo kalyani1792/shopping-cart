@@ -18,9 +18,8 @@ export class AddProductComponent implements OnInit {
   displayedColumns: string[] = ['productName', 'productCategry', 'freshness', 'price','comments','date','Action'];
   dataSource!: MatTableDataSource<any>;
 
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild(MatSort) sort!: MatSort;
-
+  @ViewChild(MatPaginator,{static:false}) paginator!: MatPaginator;
+  @ViewChild(MatSort, {static: false}) sort: MatSort;
   constructor(private dialog:MatDialog,private adminApi:AdmindataService) { }
   openDialog() {
     this.dialog.open(DialogComponent,

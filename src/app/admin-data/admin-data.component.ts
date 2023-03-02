@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-admin-data',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminDataComponent implements OnInit {
 
-  constructor() { }
+  constructor(private cartitem:CartService) { }
 
   ngOnInit() {
+    
   }
+cartData(){
+  return this.cartitem.getCartItems().subscribe(d=>{
+console.log(d);
 
+  })
+}
 }

@@ -6,7 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./cart-item.component.css']
 })
 export class CartItemComponent implements OnInit {
-
+//parent to child 
   @Input() cartItem: any
 
   constructor() { }

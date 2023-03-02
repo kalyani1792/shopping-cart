@@ -38,7 +38,7 @@ import {MatSortModule} from '@angular/material/sort';
 import {UsdinrPipe } from './pipe/usdinr.pipe';
 import {AbouComponent } from './abou/abou.component';
 import {MatCardModule} from '@angular/material/card';
-import {FlexLayoutModule } from '@angular/flex-layout';
+import {MatListModule} from '@angular/material/list';
 @NgModule({
   declarations: [
     AppComponent,
@@ -84,7 +84,7 @@ import {FlexLayoutModule } from '@angular/flex-layout';
   MatPaginatorModule,
   MatSortModule,
   MatCardModule,
-  FlexLayoutModule
+  MatListModule
   ],
   entryComponents: [DialogComponent],
   providers: [],

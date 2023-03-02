@@ -18,3 +18,10 @@ border-image: round;
 li{
     cursor:pointer;
 }
+.btn-primary,.form-control
+ {
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+ }

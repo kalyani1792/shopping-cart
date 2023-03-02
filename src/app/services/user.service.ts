@@ -14,5 +14,6 @@ export class UserService {
   loginUser()
   {
     return this.http.get<any>(usersUrl)
+    
   }
 }
